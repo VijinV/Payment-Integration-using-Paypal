@@ -78,6 +78,24 @@ const paypalPayment = async (req, res) => {
 const loadPage = (req, res) => {
     res.sendFile('index.html', { root: __dirname });
   };
-  
 
-module.exports = {paypalPayment,loadPage};
+  const handlePayment = (req, res) => {
+    const payerId = req.query.PayerID;
+    const paymentId = req.query.paymentId;
+  
+    const executePayment = {
+      payer_id: payerId,
+    };
+  
+    paypal.payment.execute(paymentId, executePayment, (error, payment) => {
+      if (error) {
+        console.error('Error executing PayPal payment:', error);
+        res.redirect('/paypalcancel');
+      } else {
+        
+        res.send('Payment Success'); 
+      }
+    });
+  }
+
+module.exports = {paypalPayment,loadPage,handlePayment};
