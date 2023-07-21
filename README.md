@@ -1,4 +1,4 @@
-# Project Name: PayPal Payment Integration with Node.js, Express, and MongoDB
+# PayPal Payment Integration with Node.js, Express, and MongoDB
 
 ## Introduction
 This project demonstrates the implementation of PayPal payment integration into a Node.js web application using Express as the framework and MongoDB as the database. For a detailed step-by-step guide, please refer to the accompanying blog titled "Simplifying Payments: PayPal Integration with Node.js, Express, and MongoDB."
